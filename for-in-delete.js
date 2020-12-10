@@ -41,6 +41,10 @@
 
 function showValues( obj ) {
   //Code Here
+  newStr = ''
+  for (var key in obj){
+    newStr += obj[key]
+  } return newStr
 }
 
 
@@ -54,7 +58,13 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+const greaterThan10 = obj => {
+  for(var key in obj){
+    if(obj[key]>10){
+      obj[key] = 0
+    }
+  } return obj
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -66,7 +76,11 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+const double = obj => {
+  for(var key in obj){
+    obj[key] *=2
+  } return obj
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -80,7 +94,14 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+const secrets = obj => {
+  newString = ''
+  for(var key in obj){
+    if(key.startsWith('sh') ){
+      newString += obj[key]
+    }
+  } return newString
+}
 
 
 /* 
@@ -112,8 +133,10 @@ function showValues( obj ) {
 
 //Code Here
 
-
-
+const removePassword = obj => {
+  delete obj.password
+  return obj
+} 
 ////////// PROBLEM 6 //////////
 
 // Do not edit the code below.
@@ -130,6 +153,11 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+for (var key in deleteTheBigNumbers)
+  if(deleteTheBigNumbers[key] > 100){
+    delete deleteTheBigNumbers[key]
+  }
+  
 
 
 
@@ -142,9 +170,13 @@ var deleteTheBigNumbers = {
   Return the updated object.
 */
 
-//Code Here
-
-
+let startsWithK = obj => {
+  for (var key in obj){
+    if(obj[key].startsWith('k') ){
+    delete obj[key]}
+  } 
+  return obj
+} 
 
 ////////// PROBLEM 8 //////////
 
@@ -157,6 +189,11 @@ var deleteTheBigNumbers = {
   (hint: the method includes() may be of use...)
 */
 
-//Code Here
-
-
+let hiddenTreasure = obj => {
+  for (var prop in obj){
+    if(!obj[prop].includes('treasure')){
+    delete obj[prop];
+    }
+  }
+  return obj
+};
